@@ -9,7 +9,7 @@ categories: azure networking
   <img src="/assets/images/Matrix.webp" alt="Matrix-style Microsoft network wizard" width="500"/>
 </p>
 
-Let’s start with something that’s frustrated almost every on-premises network engineer (including me) the first time they step into Azure: **the never-ending tangle of route tables.**
+Before we get into Azure Route Server, let’s talk about something that throws nearly every on-premises network engineer off balance, especially if, like me, you come from a Cisco background and the first time you step into Azure: **the never-ending tangle of route tables.**
 
 In a traditional world, routes were simple. You had a router. It had interfaces. You knew exactly which side of the network a packet came from and where it needed to go. Routing was often automatic, mostly physical, and rarely touched unless something broke or a new site came online. For all its quirks, it *made sense*.
 
