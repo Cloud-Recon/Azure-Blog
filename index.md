@@ -1,15 +1,15 @@
 ---
 layout: home
 author_profile: true
-title: Welcome to CloudRecon
+title: Welcome to Cloud-Recon
 excerpt: Azure networking insights from the field, by Wayne Marks.
 ---
 
 <center>
 
-# 👋 Welcome to CloudRecon
+# 👋 Welcome to Cloud-Recon
 
-![Wayne and Dogs](/assets/images/Cloud-Recon.webp)
+<img src="/Azure-Blog/assets/images/Cloud-Recon.webp" alt="Wayne and Dogs" style="max-width: 600px; border-radius: 12px; margin-top: 20px;" />
 
 </center>
 
