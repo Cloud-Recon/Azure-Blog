@@ -13,11 +13,6 @@
 <!-- Profile block (top left as normal markdown) -->
 <br />
 
-### Wayne Marks
-
-**Azure CSA**  
-Real-world networking from the field
-
 ---
 
 I’m **Wayne Marks**, a UK-based Microsoft Infrastructure Cloud Solution Architect (CSA) with the Global team at Microsoft. This space is where I share practical insights, architectures, and real-world lessons from working with customers across Azure.
