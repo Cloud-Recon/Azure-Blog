@@ -63,8 +63,6 @@ Want to steer internet-bound traffic through a proxy NVA before it exits? UDRs a
 
 They’re not optional. They’re the steering wheel and brake pedal in an otherwise self-driving network.
 
----
-
 UDRs aren’t elegant. They aren’t glamorous. And at scale, managing them can quickly turn into a nightmare.
 
 But they’re the price we pay for the flexibility and abstraction of cloud.
