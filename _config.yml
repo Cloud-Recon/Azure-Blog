@@ -1,29 +1,12 @@
 title: Cloud-Recon
-description: Azure field insights from Wayne Marks
+description: Azure blog from a CSA
 baseurl: "/Azure-Blog"
 url: "https://cloud-recon.github.io"
-theme: null
-
-# Enable remote theme
-remote_theme: mmistakes/minimal-mistakes
-
-# Minimal Mistakes theme options
-plugins:
-  - jekyll-remote-theme
-  - jekyll-include-cache
+theme: jekyll-theme-cayman
 
 markdown: kramdown
-highlighter: rouge
+kramdown:
+  input: GFM
 
-# Author settings
-author:
-  name   : "Wayne Marks"
-  avatar : "/assets/images/Cloud-Recon.webp"
-  bio    : "Azure CSA | Real-world networking from the field"
-
-# Social settings (optional)
-social:
-  type: Person
-  name: Wayne Marks
-  links:
-    - https://www.linkedin.com/in/waynemarkscloud
+plugins:
+  - jekyll-feed
