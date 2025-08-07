@@ -1,0 +1,1 @@
+This file allows GitHub to create the assets/images folder.
