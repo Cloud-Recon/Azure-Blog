@@ -6,76 +6,96 @@ categories: azure networking
 permalink: /azure-networking-why-we-still-rely-on-route-tables/
 ---
 
-<div class="main-content">
+![Matrix-style Microsoft wizard](/Azure-Blog/assets/images/Matrix.webp)
 
-<p align="center">
-  <img src="/Azure-Blog/assets/images/Matrix.webp" alt="Matrix-style Microsoft network wizard" width="500"/>
-</p>
+Before we get into Azure Route Server, let’s talk about something that throws nearly every on-premises network engineer off balance — especially if, like me, you come from a Cisco background.
 
-Before we get into Azure Route Server, let’s talk about something that throws nearly every on-premises network engineer off balance, especially if, like me, you come from a Cisco background and the first time you step into Azure: **the never-ending tangle of route tables**, and what at first seems a backward step in networking.
+That moment you step into Azure and discover the **never-ending tangle of route tables** feels like a step backward. 
 
-In a traditional world, routes were simple. You had a router. It had interfaces. You knew exactly which side of the network a packet came from and where it needed to go. Routing was often automatic, mostly physical, and rarely touched unless something broke or a new site came online. For all its quirks, it *made sense*.
+In the traditional world, routing was physical, direct, and often automatic. It just worked — until something broke. In Azure, you’ll quickly realise:
 
-Then you land in Azure and discover you need to build **User Defined Routes (UDRs)** for what feels like… everything.
+- Want traffic from a spoke to reach your firewall? = UDR  
+- Want to steer traffic through a NVA? = UDR  
+- Want to override a default route? = UDR  
+- Peered VNets? VPNs? Private Link? = UDR  
 
-1. If you want traffic from a spoke to reach your firewall = UDR.  
-2. If you want to steer traffic through a NVA = UDR.  
-3. If you want to override a default internet route = UDR.  
-4. If you want to peer a VNet and keep it secure = UDR.  
-5. If you're using Virtual WAN or ExpressRoute or Private Link, guess what... UDR.
+Suddenly, it’s 2025 and we’re **hand-crafting route tables like it’s 2005**. But it’s not madness. There’s a method.
 
-At first glance, it feels like we’ve gone backwards. All this software-defined magic and we’re still **hand-crafting route tables like it’s 2005.** But there are good reasons for it, and understanding them is the key to designing Azure networks properly.
-
-So why does Azure need UDRs? Why is this “manual routing” still a thing?
+---
 
 ## 1. Microsoft’s Global Network Isn’t a Flat LAN
 
-<p align="center">
-  <img src="/Azure-Blog/assets/images/MSFT GB Network.webp" alt="Microsoft Global Network Map" width="500"/>
-</p>
+![Microsoft Global Network Map](/Azure-Blog/assets/images/MSFT%20GB%20Network.webp)
 
-Microsoft owns one of the largest and most advanced global networks in the world, spanning over 180 global edge sites and interconnecting every Azure region with lightning-fast private fibre. When you connect a spoke VNet in UK West to a service in UK South, that traffic doesn’t touch the public internet, it stays entirely inside Microsoft’s backbone.
+Microsoft owns one of the world’s most advanced private networks. Over 180 edge sites, spanning continents. 
 
-That’s brilliant for performance and security, but it also means **you can’t rely on legacy routing behaviour.** Traffic might take unexpected paths because Azure assumes *global reachability is a good thing*, and it is... until you need inspection, segregation, or policy enforcement. That’s where UDRs come in. They act like signs at junctions, telling Azure exactly where to send traffic instead of letting the system decide for you.
+That traffic from a spoke in UK West to UK South? It stays inside Microsoft’s backbone.  
+It never touches the public internet.
+
+But here’s the catch: **Azure assumes global reachability is a good thing.**
+
+Which it is — until you need inspection, policy enforcement, or security boundaries.  
+That’s where UDRs come in. They give you back **control of the route**.
+
+---
 
 ## 2. Software-Defined Networking Doesn’t Care About Physical Rules
 
-This is where the old-school networking mindset really collides with cloud.
+Your next hop could be in a different subnet. A different zone. A different region.
 
-In Azure, your “next hop” could be in a completely different subnet. It might even be in a completely different *availability zone*. There’s no physical router in the middle that sees the packet and chooses a path. Instead, the **Azure fabric (the underlying SDN platform)** looks at metadata, route tables, NSGs, service tags, and BGP announcements and decides where the packet goes.
+There’s no physical router reading the packet. It’s the **Azure fabric** that decides the path, based on:
 
-And that decision needs to be **instructed explicitly**. If you want traffic to pass through a firewall in a different subnet before hitting the internet? You don’t patch cables or configure OSPF, you write a UDR. It’s the Azure-native way of injecting logic into a topology that doesn’t physically exist.
+- Metadata  
+- NSGs  
+- Route tables  
+- BGP advertisements  
+- Service tags  
 
-## 3. You’re Working With a Multi-Layered Routing Stack
+You don’t plug in a cable to fix it. You write a UDR. That’s how you make logic apply to a network that doesn’t physically exist.
 
-Azure doesn’t just look at one route table. It combines:
+---
 
-- **System routes** (the defaults that every VNet gets)  
-- **User Defined Routes (UDRs)** (which you apply per subnet)  
-- **BGP routes** (if you’re using VPN Gateway or ExpressRoute)  
-- **Peering routes** (if your VNets are connected)  
-- **Private Link routes** (if you're pulling services into your VNet)  
-- And more...
+## 3. Azure’s Routing Stack is a Layered Cake
 
-Each of these layers has a specific **priority and behaviour**, and only UDRs allow you to override all the rest. If you don’t use them, you’re trusting Azure’s defaults which may be fine 80 percent of the time, but **that other 20 percent is where problems, security risks, and routing black holes appear.**
+Azure doesn’t have just one routing table. It’s a blend of:
 
-## 4. You’re Not Working With Physical Network Gear
+- **System routes** – Built-in defaults for every VNet  
+- **User Defined Routes (UDRs)** – The ones you create per subnet  
+- **BGP routes** – From VPN Gateway or ExpressRoute  
+- **Peering routes** – For VNet-to-VNet connections  
+- **Private Link routes** – For services pulled into your VNet  
+- And others...
 
-This one often goes unsaid, but it matters.
+Only UDRs let you override the rest.  
+**Ignore them, and you’re relying on assumptions** — which works… until it doesn’t.
 
-In on-prem, you design a topology that enforces rules with physical location. In Azure, **you simulate the topology** and the only way to enforce it is through logic. UDRs give you the ability to simulate a network design that otherwise has no physical enforcement.
+---
 
-Want spoke-to-spoke traffic to flow through an inspection point? Simulate it with UDRs.  
-Want to isolate storage access so only one subnet can reach it? Use UDRs.  
-Want to steer internet-bound traffic through a proxy NVA before it exits? UDRs again.
+## 4. This Isn’t Physical Kit — You’re Simulating a Network
 
-They’re not optional. They’re the steering wheel and brake pedal in an otherwise self-driving network.
+You’re not racking switches anymore.
 
-UDRs aren’t elegant. They aren’t glamorous. And at scale, managing them can quickly turn into a nightmare.
+There’s no MAC address table to interrogate or cable to trace. You’re building a **logical** design inside a software platform.
 
-But they’re the price we pay for the flexibility and abstraction of cloud.
+UDRs are how you:
 
-**And that’s why what comes next is so important.**  
-Because if we can reduce the pain of static route management… maybe we can finally make cloud routing feel modern again.
+- Steer spoke-to-spoke traffic through an inspection zone  
+- Restrict access to a storage subnet  
+- Force internet egress via a proxy  
 
-</div>
+In other words, UDRs are the brake and steering wheel in this car.  
+**And Azure won’t drive it for you.**
+
+---
+
+## The Bigger Picture
+
+User Defined Routes aren’t elegant.  
+They don’t scale easily.  
+They’re not pretty.
+
+But they are *necessary*. And once you understand why they exist, you can start designing networks that behave exactly how you want them to.
+
+And that’s what makes Azure Route Server so interesting — because what comes next might just make all of this... easier.
+
+Stay tuned.
