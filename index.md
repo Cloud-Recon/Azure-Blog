@@ -1,12 +1,12 @@
 ---
 layout: home
 author_profile: true
+title: 👋 Welcome to Cloud-Recon 👋
 excerpt: Azure networking insights from the field, by Wayne Marks.
 ---
 
 <center>
 
-# 👋 Welcome to Cloud-Recon
 
 <img src="/Azure-Blog/assets/images/Cloud-Recon.webp" alt="Wayne and Dogs" style="max-width: 600px; border-radius: 12px; margin-top: 20px;" />
 
