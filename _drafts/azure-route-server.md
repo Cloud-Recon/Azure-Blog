@@ -15,10 +15,10 @@ In a traditional world, routes were simple. You had a router. It had interfaces.
 
 Then you land in Azure and discover you need to build **User Defined Routes (UDRs)** for what feels like… everything.
 
-1. If you want traffic from a spoke to reach your firewall, UDR.  
-2. If you want to steer traffic through a NVA, UDR.  
-3. If you want to override a default internet route, UDR.  
-4. If you want to peer a VNet and keep it secure, UDR.  
+1. If you want traffic from a spoke to reach your firewall = UDR.  
+2. If you want to steer traffic through a NVA = UDR.  
+3. If you want to override a default internet route = UDR.  
+4. If you want to peer a VNet and keep it secure = UDR.  
 5. If you're using Virtual WAN or ExpressRoute or Private Link, guess what...UDR!!!
 
 At first glance, it feels like we’ve gone backwards. All this software-defined magic and we’re still **hand-crafting route tables like it’s 2005.** But there are good reasons for it, and understanding them is the key to designing Azure networks properly.
