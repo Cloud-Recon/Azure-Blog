@@ -6,7 +6,7 @@ categories: azure networking
 permalink: /azure-networking-why-we-still-rely-on-route-tables/
 ---
 
-<div style="max-width: 760px; margin: auto;">
+<div class="main-content">
 
 <p align="center">
   <img src="/Azure-Blog/assets/images/Matrix.webp" alt="Matrix-style Microsoft network wizard" width="500"/>
