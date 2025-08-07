@@ -9,7 +9,7 @@ excerpt: Azure networking insights from the field, by Wayne Marks.
 
 # 👋 Welcome to CloudRecon
 
-![Wayne and Dogs](assets/images/Cloud-Recon.webp)
+![Wayne and Dogs](/assets/images/Cloud-Recon.webp)
 
 </center>
 
