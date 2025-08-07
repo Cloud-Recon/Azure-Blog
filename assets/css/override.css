@@ -1,24 +1,52 @@
-/* Base body font: Comic Sans for dyslexia readability */
+/* Base layout and accessibility */
 body {
   font-family: "Comic Sans MS", "Comic Sans", cursive, sans-serif !important;
   font-size: 18px;
   line-height: 1.8;
   color: #eaeaea;
   background-color: #0d1117;
-  padding: 20px;
+  margin: 0;
+  padding: 0;
 }
 
-/* Headings styling */
-h1, h2, h3, h4, h5, h6 {
-  font-family: "Comic Sans MS", "Comic Sans", cursive, sans-serif !important;
+/* Limit max width for better readability */
+.container {
+  max-width: 900px;
+  margin: auto;
+  padding: 2rem;
+}
+
+/* Card-style post wrapper */
+.post-card {
+  background-color: #1e1e1e;
+  border-radius: 12px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+  transition: all 0.3s ease-in-out;
+}
+
+.post-card:hover {
+  box-shadow: 0 0 30px rgba(100, 100, 255, 0.2);
+}
+
+/* Image styling */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto 1rem auto;
+  border-radius: 10px;
+}
+
+/* Heading styles */
+h1, h2, h3, h4 {
   font-weight: bold;
-  margin-top: 2rem;
-  margin-bottom: 1rem;
-  line-height: 1.3;
   color: #ffffff;
+  margin-top: 2rem;
 }
 
-/* Links */
+/* Link styles */
 a {
   color: #61dafb;
   text-decoration: none;
@@ -27,22 +55,13 @@ a:hover {
   text-decoration: underline;
 }
 
-/* Paragraphs */
-p {
-  margin-bottom: 1.2rem;
-}
-
 /* Lists */
 ul, ol {
-  margin-bottom: 1.5rem;
-  padding-left: 2rem;
+  padding-left: 1.5rem;
+  margin-bottom: 1rem;
 }
 
-/* Code blocks */
-code, pre {
-  font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
-  background-color: #1e1e1e;
-  color: #dcdcdc;
-  padding: 0.2em 0.4em;
-  border-radius: 4px;
+/* Paragraph spacing */
+p {
+  margin-bottom: 1.2rem;
 }
