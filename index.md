@@ -1,4 +1,6 @@
+<!-- Link to override.css for dyslexia-friendly Comic Sans -->
 <link rel="stylesheet" href="/Azure-Blog/assets/css/override.css">
+
 <!-- README.md or _index.md -->
 
 <!-- Top-centre welcome message -->
@@ -24,4 +26,3 @@ I’m **Wayne Marks**, a UK-based Microsoft Infrastructure Cloud Solutions Archi
 > 🔷 *This GitHub blogging project is new to me* — it’s a learn-and-grow-together exercise.  
 > My goal is to capture and share useful, hands-on guidance.  
 > I’ll keep the content focused, practical, and transparent about what works (and what doesn’t) in the field.
-
