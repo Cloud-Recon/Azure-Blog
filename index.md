@@ -1,7 +1,6 @@
 ---
 layout: home
 author_profile: true
-title: Welcome to Cloud-Recon
 excerpt: Azure networking insights from the field, by Wayne Marks.
 ---
 
