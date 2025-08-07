@@ -1,17 +1,9 @@
 ---
-title: "Understanding ExpressRoute Resiliency"
-categories: 
-  - Azure Networking
-tags:
-  - ExpressRoute
-  - High Availability
+title: "First blog coming Friday 8th August on Azure Route Server"
+date: 2024-08-01
 ---
 
-Resiliency in ExpressRoute isn't just about redundancy — it's about understanding failure domains, control planes, and the edge integration model.
+👋  
+The first post will go live on **Friday 8th August**, diving deep into **Azure Route Server** — what it is, when to use it, and how to design securely around it.
 
-## Scope
-
-This article covers:
-- Key failure points in ExpressRoute
-- Design options for geo-redundancy
-- What I've seen work well in legal and public sector accounts
+Stay tuned.
