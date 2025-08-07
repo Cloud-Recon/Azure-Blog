@@ -5,9 +5,9 @@ title: "Welcome to CloudRecon"
 excerpt: "Azure networking insights from the field, by Wayne Marks."
 ---
 
-<p align="center">
-  <img src="/Azure-Blog/assets/images/Cloud-Recon.webp" alt="Wayne's Caricature" width="280"/>
-</p>
+<div style="text-align: center;">
+  <img src="/Azure-Blog/assets/images/Cloud-Recon.webp" alt="Wayne's Caricature" width="260" />
+</div>
 
 I'm Wayne Marks — a UK-based Microsoft Infrastructure Cloud Solution Architect (CSA), and this space is where I share practical insights, architectures, and real-world lessons from working with customers across Azure.
 
@@ -32,4 +32,5 @@ I'm Wayne Marks — a UK-based Microsoft Infrastructure Cloud Solution Architect
 ### 🔹 Lab & Demo Walkthroughs
 
 - Step-by-step network builds with Bicep or PowerShell  
-- Hybrid connectivity (VPN/ExpressRoute/Private Li
+- Hybrid connectivity (VPN/ExpressRoute/Private Link)  
+- Network failover and disaster recovery testing  
