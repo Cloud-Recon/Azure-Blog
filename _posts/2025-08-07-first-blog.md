@@ -1,5 +1,5 @@
 ---
-title: "First blog coming Friday 8th August on Azure Route Server"
+title: "First blog coming Friday 15th August on Azure Route Server"
 date: 2024-08-01
 ---
 
