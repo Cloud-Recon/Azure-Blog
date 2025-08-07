@@ -27,7 +27,7 @@ So why does Azure need UDRs? Why is this “manual routing” still a thing?
 
 ### 1. Microsoft’s Global Network Isn’t a Flat LAN
 
-Microsoft owns one of the largest and most advanced global networks in the world, spanning over 180 global edge sites and interconnecting every Azure region with lightning-fast private fibre. When you connect a spoke VNet in UK West to a service in UK South, that traffic doesn't touch the public internet — it stays entirely inside Microsoft’s backbone.
+Microsoft owns one of the largest and most advanced global networks in the world, spanning over 180 global edge sites and interconnecting every Azure region with lightning-fast private fibre. When you connect a spoke VNet in UK West to a service in UK South, that traffic doesn't touch the public internet, it stays entirely inside Microsoft’s backbone.
 
 That’s brilliant for performance and security, but it also means **you can’t rely on legacy routing behaviour**. Traffic might take unexpected paths, because Azure assumes *global reachability is a good thing* and it is, until you need inspection, segregation, or policy enforcement. That’s where UDRs come in. They act like signs at junctions, telling Azure exactly where to send traffic, instead of letting the system decide for you.
 
@@ -35,7 +35,7 @@ That’s brilliant for performance and security, but it also means **you can’t
 
 This is where the old-school networking mindset really collides with cloud.
 
-In Azure, your “next hop” could be in a completely different subnet. It might even be in a completely different *availability zone*. There’s no physical router in the middle that sees the packet and chooses a path. Instead, the **Azure fabric (the underlying SDN platform)** looks at metadata — route tables, NSGs, service tags, and BGP announcements — and decides where the packet goes.
+In Azure, your “next hop” could be in a completely different subnet. It might even be in a completely different *availability zone*. There’s no physical router in the middle that sees the packet and chooses a path. Instead, the **Azure fabric (the underlying SDN platform)** looks at metadata, route tables, NSGs, service tags, and BGP announcements and decides where the packet goes.
 
 And that decision needs to be **instructed explicitly**. If you want traffic to pass through a firewall in a different subnet before hitting the internet? You don’t patch cables or configure OSPF, you write a UDR. It’s the Azure-native way of injecting logic into a topology that doesn’t physically exist.
 
