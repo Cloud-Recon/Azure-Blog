@@ -24,6 +24,3 @@ I’m **Wayne Marks**, a UK-based Microsoft Infrastructure Cloud Solutions Archi
 > My goal is to capture and share useful, hands-on guidance.  
 > I’ll keep the content focused, practical, and transparent about what works (and what doesn’t) in the field.
 
----
-
-
