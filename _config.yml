@@ -2,6 +2,7 @@ title: Cloud-Recon
 description: Azure blog from a CSA
 baseurl: "/Azure-Blog"
 url: "https://cloud-recon.github.io"
+
 theme: jekyll-theme-cayman
 
 markdown: kramdown
@@ -11,7 +12,7 @@ kramdown:
 plugins:
   - jekyll-feed
 
-# Enable custom CSS override
+# Tell Jekyll to use our custom stylesheet
 defaults:
   -
     scope:
