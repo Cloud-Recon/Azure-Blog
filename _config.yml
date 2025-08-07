@@ -8,5 +8,11 @@ markdown: kramdown
 kramdown:
   input: GFM
 
+sass:
+  style: compressed
+
+include:
+  - assets/css/override.css
+
 plugins:
   - jekyll-feed
