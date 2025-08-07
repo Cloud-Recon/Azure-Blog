@@ -2,7 +2,11 @@ title: "CloudRecon Blog"
 description: "Azure networking insights from the field"
 baseurl: "/Azure-Blog"
 url: "https://cloud-recon.github.io"
+
 theme: minimal-mistakes-jekyll
+minimal_mistakes_skin: "dark"
+enable_dark_mode: true
+
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
