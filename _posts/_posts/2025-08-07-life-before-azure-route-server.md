@@ -9,7 +9,7 @@ categories: azure networking
   <img src="/assets/images/Matrix.webp" alt="Matrix-style Microsoft network wizard" width="500"/>
 </p>
 
-Before we get into Azure Route Server, let’s talk about something that throws nearly every on-premises network engineer off balance, especially if, like me, you come from a Cisco background and the first time you step into Azure: **the never-ending tangle of route tables.** and what at first seems a backward step in Networking.
+Before we get into Azure Route Server, let’s talk about something that throws nearly every on-premises network engineer off balance, especially if, like me, you come from a Cisco background and the first time you step into Azure: **the never-ending tangle of route tables.** And what at first seems a backward step in networking.
 
 In a traditional world, routes were simple. You had a router. It had interfaces. You knew exactly which side of the network a packet came from and where it needed to go. Routing was often automatic, mostly physical, and rarely touched unless something broke or a new site came online. For all its quirks, it *made sense*.
 
@@ -27,9 +27,13 @@ So why does Azure need UDRs? Why is this “manual routing” still a thing?
 
 ### 1. Microsoft’s Global Network Isn’t a Flat LAN
 
-Microsoft owns one of the largest and most advanced global networks in the world, spanning over 180 global edge sites and interconnecting every Azure region with lightning-fast private fibre. When you connect a spoke VNet in UK West to a service in UK South, that traffic doesn't touch the public internet, it stays entirely inside Microsoft’s backbone.
+<p align="center">
+  <img src="/assets/images/MSFT%20GB%20Network.webp" alt="Microsoft Global Network Map" width="500"/>
+</p>
 
-That’s brilliant for performance and security, but it also means **you can’t rely on legacy routing behaviour**. Traffic might take unexpected paths, because Azure assumes *global reachability is a good thing* and it is, until you need inspection, segregation, or policy enforcement. That’s where UDRs come in. They act like signs at junctions, telling Azure exactly where to send traffic, instead of letting the system decide for you.
+Microsoft owns one of the largest and most advanced global networks in the world, spanning over 180 global edge sites and interconnecting every Azure region with lightning-fast private fibre. When you connect a spoke VNet in UK West to a service in UK South, that traffic doesn’t touch the public internet, it stays entirely inside Microsoft’s backbone.
+
+That’s brilliant for performance and security, but it also means **you can’t rely on legacy routing behaviour**. Traffic might take unexpected paths because Azure assumes *global reachability is a good thing*, and it is... until you need inspection, segregation, or policy enforcement. That’s where UDRs come in. They act like signs at junctions, telling Azure exactly where to send traffic instead of letting the system decide for you.
 
 ### 2. Software-Defined Networking Doesn’t Care About Physical Rules
 
@@ -42,11 +46,11 @@ And that decision needs to be **instructed explicitly**. If you want traffic to 
 ### 3. You’re Working With a Multi-Layered Routing Stack
 
 Azure doesn’t just look at one route table. It combines:
-- **System routes** (the defaults that every VNet gets),
-- **User Defined Routes (UDRs)** (which you apply per subnet),
-- **BGP routes** (if you’re using VPN Gateway or ExpressRoute),
-- **Peering routes** (if your VNets are connected),
-- **Private Link routes** (if you're pulling services into your VNet),
+- **System routes** (the defaults that every VNet gets)
+- **User Defined Routes (UDRs)** (which you apply per subnet)
+- **BGP routes** (if you’re using VPN Gateway or ExpressRoute)
+- **Peering routes** (if your VNets are connected)
+- **Private Link routes** (if you're pulling services into your VNet)
 - And more...
 
 Each of these layers has a specific **priority and behaviour**, and only UDRs allow you to override all the rest. If you don’t use them, you’re trusting Azure’s defaults which may be fine 80% of the time, but **that other 20% is where problems, security risks, and routing black holes appear**.
