@@ -1,0 +1,25 @@
+title: "CloudRecon Blog"
+description: "Azure networking insights from the field"
+baseurl: "/Azure-Blog"
+url: "https://cloud-recon.github.io"
+theme: minimal-mistakes-jekyll
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+author:
+  name: "Wayne Marks"
+  avatar: "/assets/images/avatar.png"
+  bio: "Infra CSA @ Microsoft UK | Azure Networking Specialist | British Army veteran"
+  location: "UK"
+
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: single
+      author_profile: true
+      read_time: true
+      comments: false
+      share: true
