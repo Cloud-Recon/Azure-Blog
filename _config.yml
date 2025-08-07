@@ -8,11 +8,14 @@ markdown: kramdown
 kramdown:
   input: GFM
 
-sass:
-  style: compressed
-
-include:
-  - assets/css/override.css
-
 plugins:
   - jekyll-feed
+
+# Enable custom CSS override
+defaults:
+  -
+    scope:
+      path: ""
+    values:
+      stylesheets:
+        - /assets/css/override.css
