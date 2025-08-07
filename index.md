@@ -26,7 +26,4 @@ I’m **Wayne Marks**, a UK-based Microsoft Infrastructure Cloud Solutions Archi
 
 ---
 
-<!-- Replace post link section with a placeholder -->
-### Recent Posts
 
-**First blog coming Friday 8th August on Azure Route Server 👋**
