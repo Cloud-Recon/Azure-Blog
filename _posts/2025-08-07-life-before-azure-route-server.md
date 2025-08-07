@@ -1,14 +1,16 @@
 ---
-layout: post
+layout: default
 title: "Azure Networking: Why We Still Rely on Route Tables"
 date: 2025-08-07 10:00:00 +0100
 categories: azure networking
 permalink: /azure-networking-why-we-still-rely-on-route-tables/
 ---
 
-<div style="text-align: center;">
-  <img src="/Azure-Blog/assets/images/Matrix.png" alt="Matrix-style Microsoft network wizard" style="width: 500px; max-width: 100%;"/>
-</div>
+<div class="page-content">
+
+<p align="center">
+  <img src="/Azure-Blog/assets/images/Matrix.webp" alt="Matrix-style Microsoft network wizard" width="500"/>
+</p>
 
 Before we get into Azure Route Server, let’s talk about something that throws nearly every on-premises network engineer off balance, especially if, like me, you come from a Cisco background and the first time you step into Azure: **the never-ending tangle of route tables**, and what at first seems a backward step in networking.
 
@@ -28,9 +30,9 @@ So why does Azure need UDRs? Why is this “manual routing” still a thing?
 
 ## 1. Microsoft’s Global Network Isn’t a Flat LAN
 
-<div style="text-align: center;">
-  <img src="/Azure-Blog/assets/images/MSFT%20GB%20Network.png" alt="Microsoft Global Network Map" style="width: 500px; max-width: 100%;"/>
-</div>
+<p align="center">
+  <img src="/Azure-Blog/assets/images/MSFT GB Network.webp" alt="Microsoft Global Network Map" width="500"/>
+</p>
 
 Microsoft owns one of the largest and most advanced global networks in the world, spanning over 180 global edge sites and interconnecting every Azure region with lightning-fast private fibre. When you connect a spoke VNet in UK West to a service in UK South, that traffic doesn’t touch the public internet, it stays entirely inside Microsoft’s backbone.
 
@@ -48,11 +50,11 @@ And that decision needs to be **instructed explicitly**. If you want traffic to 
 
 Azure doesn’t just look at one route table. It combines:
 
-- **System routes** (the defaults that every VNet gets)
-- **User Defined Routes (UDRs)** (which you apply per subnet)
-- **BGP routes** (if you’re using VPN Gateway or ExpressRoute)
-- **Peering routes** (if your VNets are connected)
-- **Private Link routes** (if you're pulling services into your VNet)
+- **System routes** (the defaults that every VNet gets)  
+- **User Defined Routes (UDRs)** (which you apply per subnet)  
+- **BGP routes** (if you’re using VPN Gateway or ExpressRoute)  
+- **Peering routes** (if your VNets are connected)  
+- **Private Link routes** (if you're pulling services into your VNet)  
 - And more...
 
 Each of these layers has a specific **priority and behaviour**, and only UDRs allow you to override all the rest. If you don’t use them, you’re trusting Azure’s defaults which may be fine 80 percent of the time, but **that other 20 percent is where problems, security risks, and routing black holes appear.**
@@ -75,3 +77,5 @@ But they’re the price we pay for the flexibility and abstraction of cloud.
 
 **And that’s why what comes next is so important.**  
 Because if we can reduce the pain of static route management… maybe we can finally make cloud routing feel modern again.
+
+</div>
