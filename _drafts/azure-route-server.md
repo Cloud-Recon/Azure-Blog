@@ -6,7 +6,7 @@ categories: azure networking
 ---
 
 <p align="center">
-  <img src="/Azure-Blog/assets/images/Matrix.webp" alt="Matrix-style Microsoft network wizard" width="500"/>
+  <img src="/assets/images/Matrix.webp" alt="Matrix-style Microsoft network wizard" width="500"/>
 </p>
 
 Let’s start with something that’s frustrated almost every on-premises network engineer the first time they step into Azure: **the never-ending tangle of route tables.**
