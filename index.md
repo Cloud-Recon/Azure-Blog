@@ -1,24 +1,22 @@
 <!-- README.md or _index.md -->
 
+<!-- Top-centre welcome message -->
 <div align="center">
-
-<h1>👋 Welcome to Cloud-Recon 👋</h1>
-
-<img src="/Azure-Blog/assets/images/Cloud-Recon.webp" alt="Wayne with Dogs" style="max-width: 700px; border-radius: 12px; margin-top: 10px;" />
-
+  <h1>👋 Welcome to Cloud-Recon 👋</h1>
 </div>
 
+<!-- Hero image (centre) -->
+<div align="center">
+  <img src="/Azure-Blog/assets/images/Cloud-Recon.webp" alt="Wayne and Dogs" style="max-width: 700px; border-radius: 12px; margin-top: 10px;" />
+</div>
+
+<!-- Profile block (top left as normal markdown) -->
 <br />
 
-<div align="center">
+### Wayne Marks
 
-<img src="/Azure-Blog/assets/images/wayne-profile.webp" alt="Wayne Marks Profile" style="width: 120px; border-radius: 50%; margin-bottom: 10px;" />
-
-### **Wayne Marks**
-
-Azure CSA    Real-world networking from the field
-
-</div>
+**Azure CSA**  
+Real-world networking from the field
 
 ---
 
