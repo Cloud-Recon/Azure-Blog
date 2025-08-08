@@ -1,8 +1,23 @@
 ---
+# leave this front matter exactly as-is so Jekyll compiles it
 ---
 
-@import "minima";
+@import "jekyll-theme-cayman";
 
-body {
-  font-family: "Comic Sans MS", "Comic Sans", cursive;
+/* Center the content and keep it at a readable width */
+.page-content {
+  max-width: 860px;       /* nice readable width */
+  margin: 0 auto;         /* center it */
+  padding: 24px 20px;     /* breathing room */
+}
+
+/* Images: don’t overflow, and keep them centered */
+.lead-img,
+.section-img {
+  display: block;
+  max-width: 500px;       /* requested 500px look */
+  width: 100%;
+  height: auto;
+  margin: 0 auto 1rem;    /* centered with a little space below */
+  border-radius: 6px;
 }
