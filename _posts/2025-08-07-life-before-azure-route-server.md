@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Azure Networking: Why We Still Rely on Route Tables"
+title: "Azure Networking: Why We Still Rely on Route Tables? they are sooo last decade"
 date: 2025-08-07 10:00:00 +0100
 categories: azure networking
 permalink: /azure-networking-why-we-still-rely-on-route-tables/
@@ -8,7 +8,6 @@ permalink: /azure-networking-why-we-still-rely-on-route-tables/
 
 <div class="page-content">
 
-**PoC v1.1**
 
 <p align="center">
   <img src="{{ '/assets/images/Matrix.webp' | relative_url }}" alt="Matrix-style Microsoft network wizard" width="500" />
