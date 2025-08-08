@@ -6,9 +6,9 @@ categories: azure networking
 permalink: /azure-networking-why-we-still-rely-on-route-tables/
 ---
 
-<div class="page-content">
+<div class="page-content" markdown="1">
 
-PoC v1.3
+PoC v1.4
 
 <p align="center">
   <img src="{{ site.baseurl }}/assets/images/Matrix.png" alt="Matrix-style Microsoft network wizard" width="500"/>
