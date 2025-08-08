@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Azure Networking: Why We Still Rely on Route Tables? they are sooo last decade"
+title: "Azure Networking: Why We Still Rely on Route Tables"
 date: 2025-08-07 10:00:00 +0100
 categories: azure networking
 permalink: /azure-networking-why-we-still-rely-on-route-tables/
@@ -8,10 +8,11 @@ permalink: /azure-networking-why-we-still-rely-on-route-tables/
 
 <div class="page-content">
 
-
 <p align="center">
-  <img src="{{ '/assets/images/Matrix.webp' | relative_url }}" alt="Matrix-style Microsoft network wizard" width="500" />
+  <img src="/Azure-Blog/assets/images/Matrix.webp" alt="Matrix-style Microsoft network wizard" width="500"/>
 </p>
+
+**PoC v1.1**  
 
 Before we get into Azure Route Server, let’s talk about something that throws nearly every on-premises network engineer off balance, especially if, like me, you come from a Cisco background and the first time you step into Azure: **the never-ending tangle of route tables**, and what at first seems a backward step in networking.
 
@@ -23,7 +24,7 @@ Then you land in Azure and discover you need to build **User Defined Routes (UDR
 2. If you want to steer traffic through a NVA = UDR.  
 3. If you want to override a default internet route = UDR.  
 4. If you want to peer a VNet and keep it secure = UDR.  
-5. If you're using Virtual WAN or ExpressRoute or Private Link, guess what... UDR.
+5. If you're using Virtual WAN or ExpressRoute or Private Link, guess what... UDR.  
 
 At first glance, it feels like we’ve gone backwards. All this software-defined magic and we’re still **hand-crafting route tables like it’s 2005.** But there are good reasons for it, and understanding them is the key to designing Azure networks properly.
 
@@ -32,7 +33,7 @@ So why does Azure need UDRs? Why is this “manual routing” still a thing?
 ## 1. Microsoft’s Global Network Isn’t a Flat LAN
 
 <p align="center">
-  <img src="{{ '/assets/images/MSFT%20GB%20Network.png' | relative_url }}" alt="Microsoft Global Network Map" width="500" />
+  <img src="/Azure-Blog/assets/images/MSFT%20GB%20Network.webp" alt="Microsoft Global Network Map" width="500"/>
 </p>
 
 Microsoft owns one of the largest and most advanced global networks in the world, spanning over 180 global edge sites and interconnecting every Azure region with lightning-fast private fibre. When you connect a spoke VNet in UK West to a service in UK South, that traffic doesn’t touch the public internet, it stays entirely inside Microsoft’s backbone.
