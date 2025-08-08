@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Azure Networking: Why DO we still rely on Route Tables"
+title: "Azure Networking: Why DO we still rely on Route Tables?"
 date: 2025-08-07 10:00:00 +0100
 categories: azure networking
 permalink: /azure-networking-why-we-still-rely-on-route-tables/
