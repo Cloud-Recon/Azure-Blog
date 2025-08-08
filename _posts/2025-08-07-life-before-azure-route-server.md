@@ -6,10 +6,12 @@ categories: azure networking
 permalink: /azure-networking-why-we-still-rely-on-route-tables/
 ---
 
-PoC v1.1
+<div class="page-content">
+
+**PoC v1.1**
 
 <p align="center">
-  <img class="lead-img" src="{{ site.baseurl }}/assets/images/Matrix.webp" alt="Matrix-style Microsoft network wizard">
+  <img src="{{ '/assets/images/Matrix.webp' | relative_url }}" alt="Matrix-style Microsoft network wizard" width="500" />
 </p>
 
 Before we get into Azure Route Server, let’s talk about something that throws nearly every on-premises network engineer off balance, especially if, like me, you come from a Cisco background and the first time you step into Azure: **the never-ending tangle of route tables**, and what at first seems a backward step in networking.
@@ -31,7 +33,7 @@ So why does Azure need UDRs? Why is this “manual routing” still a thing?
 ## 1. Microsoft’s Global Network Isn’t a Flat LAN
 
 <p align="center">
-  <img class="section-img" src="{{ site.baseurl }}/assets/images/MSFT GB Network.webp" alt="Microsoft Global Network Map">
+  <img src="{{ '/assets/images/MSFT%20GB%20Network.png' | relative_url }}" alt="Microsoft Global Network Map" width="500" />
 </p>
 
 Microsoft owns one of the largest and most advanced global networks in the world, spanning over 180 global edge sites and interconnecting every Azure region with lightning-fast private fibre. When you connect a spoke VNet in UK West to a service in UK South, that traffic doesn’t touch the public internet, it stays entirely inside Microsoft’s backbone.
@@ -77,3 +79,5 @@ But they’re the price we pay for the flexibility and abstraction of cloud.
 
 **And that’s why what comes next is so important.**  
 Because if we can reduce the pain of static route management… maybe we can finally make cloud routing feel modern again.
+
+</div>
