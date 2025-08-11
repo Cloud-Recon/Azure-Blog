@@ -1,8 +1,7 @@
 title: Cloud-Recon
-description: Azure blog from CSA Wayne
-baseurl: "/Azure-Blog"          # repo name
+description: Azure blog from a CSA
+baseurl: "/Azure-Blog"
 url: "https://cloud-recon.github.io"
-
 theme: jekyll-theme-cayman
 
 markdown: kramdown
@@ -12,5 +11,16 @@ kramdown:
 plugins:
   - jekyll-feed
 
-# IMPORTANT: remove any previous 'defaults:' or 'stylesheets:' overrides
-# Cayman will automatically load /assets/css/style.css if we provide style.scss
+# Keep your site-wide stylesheet override
+defaults:
+  - scope:
+      path: ""
+    values:
+      stylesheets:
+        - /assets/css/override.css
+
+# NEW: collection for live previews (safe, does not touch _posts)
+collections:
+  preview:
+    output: true
+    permalink: /preview/:name/
