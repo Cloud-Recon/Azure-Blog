@@ -13,15 +13,15 @@ permalink: /expressroute-high-availability/
 
 In my view there are many certifications that do not mean much in the real world, I've met a lot of engineers with few certs for many reasons, either they stuggle with the exam format through a diversity or they just don't like taking them, but CCIE is not one of them. For me, anyone with a CCIE does not walk on water, they simply moonwalk on water! The networking knowledge needed is intense. I have worked directly with Adam Stuart at Microsoft and he is not only top class technically, he is a bloody great guy too. Along with Jose Moreno he co authored <em>Azure Networking</em>. What follows pulls out the ExpressRoute high availability guidance from their book and frames it for engineers who need a design that keeps working when a circuit fails at 03:00. This book is great to read start to finish or to use it as a referance book, as I do.
 
-**Local first steps**
+## <span style="color:green">Local first steps</span>
 
 Start with two circuits in two different peering locations. Separate providers if you can. Separate facilities always. If both circuits land in the same building you have a single point of failure you do not control. Order dual ExpressRoute circuits, terminate them in different metros, and validate that each has its own physical path. Only when the real world plumbing is diverse should you move on to routing.
 
-**Why it matters**
+## <span style="color:green">Why it matters</span>
 
 ExpressRoute is often the lifeline to your workloads. A single circuit outage without a tested design means downtime, escalations, and long nights. A sound design means the failure is a log entry. The goal is simple: in normal operation, each site uses the nearest Azure region. In failure, traffic shifts automatically to the surviving path without violating security or policy.
 
-**How easy it is**
+## <span style="color:green">How easy it is</span>
 
 The patterns are straightforward once you decide on the topology.
 
@@ -32,11 +32,11 @@ The patterns are straightforward once you decide on the topology.
 
 You must test. You should document exact expected paths per prefix family and you should rehearse failure modes.
 
-**How much it will save your backside**
+## <span style="color:green">How much it will save your backside</span>
 
 Circuits fail. Peering locations have maintenance. A Bow Tie or Square design turns a provider event into a non event for the business. The difference is people sleeping or not.
 
-**The Bow Tie design**
+## <span style="color:green">The Bow Tie design</span>
 
 Bow Tie connects each on premises site to both Azure regions. You then bias routing so that each site prefers its local region in steady state.
 
@@ -63,7 +63,7 @@ Why engineers like Bow Tie:
 - Clean mental model. Each site has two paths to Azure. Prefer local, fail to remote.
 - Clear testing story. You can drop one circuit and watch flows migrate without surprises.
 
-**The Square design**
+## <span style="color:green">The Square design</span>
 
 Square connects each site only to its local region. In failure, traffic rides the Azure backbone to reach the other region. You trade some latency in a failover for lower circuit costs and a simpler commercial model.
 
@@ -83,15 +83,15 @@ Caveats to plan for:
 - Document the Azure to Azure leg so your operations team understands the expected path.
 - Be strict with DNS and health probing so clients re home quickly when paths move.
 
-**Adding the safety raft: VPN as failover**
+## <span style="color:green">Adding the safety raft: VPN as failover</span>
 
 When risk appetite demands a third way, layer site to site VPN as a last resort. Terminate on an Azure VPN gateway or NVA and advertise a limited set of critical prefixes. Keep throughput expectations realistic and test your routing so the VPN is only selected when both ExpressRoute paths are unavailable.
 
-**Coexistence and transitivity**
+## <span style="color:green">Coexistence and transitivity</span>
 
 If you run ExpressRoute and VPN together, Azure Route Server can allow the gateways to exchange routes so each overlay knows the other exists. For traffic inspection through Azure Firewall or an NVA, bind a route table to the gateway subnet and steer specific prefixes through the firewall while still allowing the gateways to learn each other’s routes for reachability. Treat Route Server as a control plane helper. It teaches routes. It does not set next hops unless you tell it to with UDRs.
 
-**Local first steps checklist**
+## <span style="color:green">Local first steps checklist</span>
 
 - Two ExpressRoute circuits in different peering locations. Confirm physical diversity.
 - Two Azure regions selected with a clear primary for each site.
@@ -101,18 +101,18 @@ If you run ExpressRoute and VPN together, Azure Route Server can allow the gatew
 - Decide on inspection and where UDRs are needed. Validate return paths.
 - Write a failover runbook. Test, document outputs, and capture packet captures.
 
-**Why it matters**
+## <span style="color:green">Why it matters</span>
 
 Because the day a circuit drops is not the day you want to start drawing diagrams. This design work prevents outages, preserves user trust, and avoids noisy board updates.
 
-**How easy it is**
+## <span style="color:green">How easy it is</span>
 
 It is engineering, not wizardry. The patterns are known. The test cases are repeatable. The only real mistake is not building for failure and not rehearsing it.
 
-**How much it will save your backside**
+## <span style="color:green">How much it will save your backside</span>
 
 Enough that the outage becomes a ticket rather than a crisis. Enough that your name is associated with resilience instead of recovery.
 
-**Go deeper**
+## <span style="color:green">Go deeper</span>
 
 This post skims key lessons from <em>Azure Networking</em> by Jose Moreno and Adam Stuart. The book goes further with redistribution metrics, weight behaviour, AS path strategies, coexistence patterns, and clean diagrams. If you work with Azure networking, buy it, read it, and keep it within reach.
