@@ -34,7 +34,7 @@ You must test. You should document exact expected paths per prefix family and yo
 
 ## <span style="color:green">How much it will save your backside</span>
 
-Circuits fail. Peering locations have maintenance. A Bow Tie or Square design turns a provider event into a non event for the business. The difference is people sleeping or not.
+I frequently say, that the ONLY thing we can guarantee in IT, it that things fail and typically when we most need them up. Circuits are no differant, they fail. Peering locations have maintenance. A Bow Tie or Square design turns a provider event into a non event for the business. The difference is people sleeping or not.
 
 ## <span style="color:green">The Bow Tie design</span>
 
