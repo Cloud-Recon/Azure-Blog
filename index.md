@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "Cloud-Recon — Home"
+title: "Cloud-Recon - Home"
 ---
 
 <!-- Hero -->
 <div align="center">
   <h1>👋 Welcome to Cloud-Recon</h1>
-  <p>Real‑world Azure networking from the field — designs, gotchas, and lessons learned.</p>
+  <p>Real‑world Azure networking from the field, designs, gotchas, and lessons learned.</p>
   <img src="{{ '/assets/images/Cloud-Recon.webp' | relative_url }}" alt="Wayne and Dogs" style="max-width: 760px; border-radius: 12px; margin: 10px 0 6px;" />
   <p><a href="{{ '/about/' | relative_url }}">About Wayne</a></p>
 </div>
