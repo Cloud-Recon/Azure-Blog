@@ -6,7 +6,7 @@ permalink: /about/
 
 <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap;">
 
-  <div style="flex: 1; min-width: 250px;">
+  <div style="flex: 1; min-width: 400px;">
     Hi, I am Wayne Marks and have been in IT since 2002 upon leaving the Military.  
     Since then I have worked on government-sensitive projects and with various Microsoft partners.  
     I joined Microsoft in 2020 and am currently employed as an Infrastructure Cloud Solutions Architect in a global team, specialising in networking, data centre migrations and BCDR.  
