@@ -17,7 +17,7 @@ permalink: /about/
   </div>
 
   <div style="margin-left: 20px;">
-    <img src="{{ '/assets/images/WM-NFK.jpg' | relative_url }}" alt="Wayne Marks" style="width:150px; border-radius:8px;">
+    <img src="{{ '/assets/images/WM-NFK.jpg' | relative_url }}" alt="Wayne Marks" style="width:250px; border-radius:8px;">
   </div>
 
 </div>
