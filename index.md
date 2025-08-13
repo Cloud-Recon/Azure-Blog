@@ -39,7 +39,6 @@ it will appear here automatically with its date, title, and excerpt.
 
 ## 🔭 What’s coming
 - Azure Route Server deep dive (publishes Fri 15th Aug)
-- TBC: next networking topic
 - Azure Virtual WAN
 - Azure Firewall
 
