@@ -121,7 +121,7 @@ Once Route Server is in play, that set of constraints changes:
 - If one NVA fails, its BGP session drops and its routes withdraw. The platform converges to the surviving NVA without you tuning health intervals.
 
 <p align="center">
-  <img src="{{ '/assets/images/ars-multiregion.png' | relative_url }}" alt="Influencing private traffic using NVA advertisements" width="650">
+  <img src="{{ '/assets/images/route-injection.png' | relative_url }}" alt="Influencing private traffic using NVA advertisements" width="500">
 </p>
 
 <strong>Edge cases and cautions</strong>:
@@ -200,15 +200,14 @@ Route Server is the traffic director that makes this clean. It establishes BGP w
 
 <strong>Outbound and inbound symmetry</strong>. This is not only about inbound paths from on premises to Azure. Outbound flows from Azure workloads to on premises also shift seamlessly because the VNet host routes are updated by the control plane. No black holes caused by stale next hops.
 
+<p align="center">
+  <img src="{{ '/assets/images/route-injection-vpn-expressroute.png' | relative_url }}" alt="Using Route Server with VPN and ExpressRoute together" width="750">
+</p>
 <strong>Testing and operations</strong>:
 
 - Conduct a planned failover by disabling the ER BGP session. Observe convergence in Route Server, in the NVAs, and at a test VM.  
 - Capture metrics. How long did it take for routes to withdraw and reappear. What did application latency look like.  
 - Document the procedure and the expected telemetry so future drills can be scored.
-
-<p align="center">
-  <img src="{{ '/assets/images/route-injection-vpn-expressroute.png' | relative_url }}" alt="Using Route Server with VPN and ExpressRoute together" width="750">
-</p>
 
 <hr/>
 
