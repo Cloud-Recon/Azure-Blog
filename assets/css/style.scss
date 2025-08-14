@@ -6,18 +6,40 @@
 
 /* Center the content and keep it at a readable width */
 .page-content {
-  max-width: 860px;       /* nice readable width */
-  margin: 0 auto;         /* center it */
-  padding: 24px 20px;     /* breathing room */
+  max-width: 860px;      /* nice readable width */
+  margin: 0 auto;        /* center it */
+  padding: 24px 20px;    /* breathing room */
 }
 
 /* Images: don’t overflow, and keep them centered */
 .lead-img,
 .section-img {
   display: block;
-  max-width: 500px;       /* requested 500px look */
+  max-width: 500px;      /* requested 500px look */
   width: 100%;
   height: auto;
-  margin: 0 auto 1rem;    /* centered with a little space below */
+  margin: 0 auto 1rem;   /* centered with a little space below */
   border-radius: 6px;
+}
+
+/* Add proper spacing for paragraphs in blog content */
+.page-content p {
+  margin: 0 0 1rem;      /* 1rem space below each paragraph */
+  line-height: 1.6;      /* improve readability */
+}
+
+/* Add spacing for list items */
+.page-content li {
+  margin-bottom: 0.5rem; /* space between bullet/numbered items */
+  line-height: 1.6;      /* match paragraph readability */
+}
+
+/* Add spacing and style for blockquotes */
+.page-content blockquote {
+  margin: 1rem 0;
+  padding-left: 1rem;
+  border-left: 3px solid #ccc; /* subtle left border */
+  color: #ccc;                 /* lighter text for quotes */
+  font-style: italic;
+  line-height: 1.6;
 }
