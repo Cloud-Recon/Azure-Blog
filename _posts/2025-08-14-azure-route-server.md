@@ -201,8 +201,9 @@ Route Server is the traffic director that makes this clean. It establishes BGP w
 <strong>Outbound and inbound symmetry</strong>. This is not only about inbound paths from on premises to Azure. Outbound flows from Azure workloads to on premises also shift seamlessly because the VNet host routes are updated by the control plane. No black holes caused by stale next hops.
 
 <p align="center">
-  <img src="{{ '/assets/images/route-injection-vpn-expressroute.png' | relative_url }}" alt="Using Route Server with VPN and ExpressRoute together" width="750">
+  <img src="{{ '/assets/images/route-injection-vpn.png' | relative_url }}" alt="Using Route Server with VPN and ExpressRoute together" width="750">
 </p>
+
 <strong>Testing and operations</strong>:
 
 - Conduct a planned failover by disabling the ER BGP session. Observe convergence in Route Server, in the NVAs, and at a test VM.  
