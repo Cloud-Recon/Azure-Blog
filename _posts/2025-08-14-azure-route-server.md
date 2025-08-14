@@ -21,15 +21,14 @@ Writing this blog has been a blast because it has forced me to dig much deeper i
 
 <h2 style="color:green;">1. Introduction: Why Route Server Exists</h2>
 
-We left off last time wading through the swamp of User Defined Routes, the quiet little workhorses that keep Azure traffic flowing where you want it to go. They are the digital equivalent of hand painted road signs. Reliable when placed correctly. Disastrous when one gets spun the wrong way in the wind. One wrong entry and suddenly your secure traffic is on a world tour, your hybrid link is doing the networking version of lost in the post, or production has gone down because a route decided to take the day off.
+<p>We left off last time wading through the swamp of User Defined Routes, the quiet little workhorses that keep Azure traffic flowing where you want it to go. They are the digital equivalent of hand painted road signs.</p>
 
-The worst part is that Azure gives you no native way to centrally administer all those route tables. Each one sits in its own silo. It is like being caretaker of a hundred remote lighthouses. You visit by hand, change the bulb, and hope you did not miss one.
+<p>Reliable when placed correctly. Disastrous when one gets spun the wrong way in the wind. One wrong entry and suddenly your secure traffic is on a world tour, your hybrid link is doing the networking version of lost in the post, or production has gone down because a route decided to take the day off. The worst part is that Azure gives you no native way to centrally administer all those route tables.</p>
 
-Wouldn’t it be nice to keep the precision of UDRs without the lighthouse tour? If the network could update itself when topology changes? That is where Azure Route Server enters. It does not bulldoze your design. It takes over the grind and brings proper dynamic routing to the cloud world you probably assumed was already dynamic.
+<p>Each one sits in its own silo. It is like being caretaker of a hundred remote lighthouses. You visit by hand, change the bulb, and hope you did not miss one. Wouldn’t it be nice to keep the precision of UDRs without the lighthouse tour? If the network could update itself when topology changes? That is where Azure Route Server enters.</p>
 
-Think of it as swapping a shoebox of handwritten directions for a sat nav that knows where all the roads are, reroutes automatically, and never asks you to go island hopping in the rain again.
+<p>It does not bulldoze your design. It takes over the grind and brings proper dynamic routing to the cloud world you probably assumed was already dynamic. Think of it as swapping a shoebox of handwritten directions for a sat nav that knows where all the roads are, reroutes automatically, and never asks you to go island hopping in the rain again.</p>
 
-<hr/>
 
 <h2 style="color:green;">2. The Black Box of Azure’s Underlying Fabric</h2>
 
