@@ -1,6 +1,6 @@
 ---
 layout: default
-title: ExpressRoute High Availability — Bow Tie vs Square
+title: ExpressRoute High Availability - Bow Tie vs Square
 description: Practical ExpressRoute HA patterns from Azure Networking by Jose Moreno and Adam Stuart, with routing behaviours that actually hold up on a bad day.
 permalink: /expressroute-high-availability/
 ---
