@@ -121,7 +121,10 @@ Once Route Server is in play, that set of constraints changes:
 - If one NVA fails, its BGP session drops and its routes withdraw. The platform converges to the surviving NVA without you tuning health intervals.
 
 <p align="center">
-  <img src="{{ '/assets/images/influencing-private-traffic-nva.png' | relative_url }}" alt="Influencing private traffic using NVA advertisements" width="500">
+  <p align="center">
+  <img src="{{ '/assets/influencing-private-traffic-nva.png' | relative_url }}" alt="Influencing private traffic using NVA advertisements" width="650">
+</p>
+
 </p>
 
 <strong>Edge cases and cautions</strong>:
@@ -207,7 +210,10 @@ Route Server is the traffic director that makes this clean. It establishes BGP w
 - Document the procedure and the expected telemetry so future drills can be scored.
 
 <p align="center">
-  <img src="{{ '/assets/images/route-injection-vpn-and-expressroute.png' | relative_url }}" alt="Using Route Server with VPN and ExpressRoute together" width="500">
+  <p align="center">
+  <img src="{{ '/assets/route-injection-vpn-and-expressroute.png' | relative_url }}" alt="Using Route Server with VPN and ExpressRoute together" width="750">
+</p>
+
 </p>
 
 <hr/>
