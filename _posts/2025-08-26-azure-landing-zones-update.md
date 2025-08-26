@@ -15,7 +15,7 @@ permalink: /azure-landing-zones-2025-update/
   <img src="{{ '/assets/images/landing-zone-architecture.png' | relative_url }}" alt="Azure Landing Zone Architecture" width="500">
 </p>
 
-**PoC v1.0**
+**PoC v1.1**
 
 ---
 
