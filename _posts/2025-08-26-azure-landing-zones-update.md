@@ -11,12 +11,6 @@ permalink: /azure-landing-zones-2025-update/
   <img src="{{ '/assets/images/AI%20me%20!.webp' | relative_url }}" alt="AI me Cloud-Recon" width="500">
 </p>
 
-<p align="center">
-  <img src="{{ '/assets/images/landing-zone-architecture.png' | relative_url }}" alt="Azure Landing Zone Architecture" width="500">
-</p>
-
-**PoC v1.1**
-
 ---
 
 ## 1. Introduction: Why Landing Zones Still Matter
