@@ -88,6 +88,7 @@ Sometimes it is easier just to see it laid out. Here is the timeline of what lan
 | Design Areas guidance update                                     | **14 July 2025**          |
 | Design Principles article update                                 | **27 September 2024**     |
 
+
 This is the cheat sheet version. If you need to convince someone that the documentation has genuinely moved forward, or you want to time stamp when you last checked the CAF, this table is your friend.
 
 ---
