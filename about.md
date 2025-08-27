@@ -14,7 +14,7 @@ permalink: /about/
     I have supported enterprise and government customers in Australia, EMEA, multiple countries in Africa, as well as the UK.  
 
     Outside of work, I am married with four daughters, two granddaughters, and a grandson on the way.  
-    I also have an unhealthy obsession with Springer Spaniel dogs. I currently have two and a third on the way.
+    I also have an unhealthy obsession with Springer Spaniel dogs. I now have three, I'd love more but the wife say no! 
   </div>
 
   <div style="margin-left: 20px;">
