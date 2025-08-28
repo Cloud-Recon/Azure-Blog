@@ -10,11 +10,15 @@ permalink: /about/
 
 Hello, I am Wayne Marks. I have worked in IT since 2002 after leaving the British Army. I started with hands-on engineering and moved through partner roles and government-sensitive projects before joining Microsoft in 2020.
 
-Today I am an Infrastructure Cloud Solutions Architect in a global team. My focus areas are Azure networking, data centre migrations and business continuity and disaster recovery. I have supported enterprise and public sector customers across the UK, EMEA, multiple countries in Africa, Australia and the USA. I particularly enjoy helping customers navigate deployments into China through 21Vianet, as it combines technical complexity with real business impact.
+Today I am an Infrastructure Cloud Solutions Architect in a global team. My focus areas are Azure networking, data centre migrations and business continuity and disaster recovery. I have supported enterprise and public sector customers across the UK, EMEA, multiple countries in Africa, and Australia.
 
 Cloud-Recon is my place to share plain-English guidance on Azure with a bias for practicality. Expect deep dives that show the why as well as the how, complete examples you can copy with confidence, and opinionated takes based on what actually works at scale. I write about things like Azure Route Server, Virtual WAN, ExpressRoute, landing zones, governance, security boundaries, and the trade-offs that sit behind real designs.
 
 My approach is simple. Build networks that are easy to reason about, easy to observe, and easy to recover. Prefer fewer moving parts. Prove it with tests. Automate what you will need to repeat. When in doubt, choose clarity.
 
-Outside of work I am married with four daughters, two granddaughters, and a grandson on the way. I also have an unhealthy obsession with Springer Spaniels. I now have three. I would happily have more but my wife says no! BOOO ;-)
+Outside of work I am married with four daughters, two granddaughters, and a grandson on the way. I also have an unhealthy obsession with Springer Spaniels. I now have three. I would happily have more but my wife says no.
 
+<p align="center">
+  <a href="https://www.linkedin.com/in/wayne-marks" target="_blank" rel="noopener">LinkedIn: Wayne Marks</a><br>
+  <a href="https://cloud-recon.github.io/Azure-Blog/">Take me home</a>
+</p>
