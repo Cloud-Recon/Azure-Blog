@@ -1,24 +1,21 @@
 ---
 layout: default
-title: About Wayne
+title: "About Wayne"
 permalink: /about/
 ---
 
-<div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap;">
+<p align="center">
+  <img src="{{ '/assets/images/WM-NFK.jpg' | relative_url }}" alt="Wayne Marks in Norfolk" width="500">
+</p>
 
-  <div style="flex: 1; min-width: 250px;">
-    Hi, I am Wayne Marks and have been in IT since 2002 upon leaving the Military.  
-    Since then I have worked on government-sensitive projects and with various Microsoft partners.  
+Hello, I am Wayne Marks. I have worked in IT since 2002 after leaving the British Army. I started with hands-on engineering and moved through partner roles and government-sensitive projects before joining Microsoft in 2020.
 
-    I joined Microsoft in 2020 and am currently employed as an Infrastructure Cloud Solutions Architect in a global team, specialising in networking, data centre migrations and BCDR.  
-    I have supported enterprise and government customers in Australia, EMEA, multiple countries in Africa, as well as the UK.  
+Today I am an Infrastructure Cloud Solutions Architect in a global team. My focus areas are Azure networking, data centre migrations and business continuity and disaster recovery. I have supported enterprise and public sector customers across the UK, EMEA, multiple countries in Africa, Australia and the USA. I particularly enjoy helping customers navigate deployments into China through 21Vianet, as it combines technical complexity with real business impact
 
-    Outside of work, I am married with four daughters, two granddaughters, and a grandson on the way.  
-    I also have an unhealthy obsession with Springer Spaniel dogs. I now have three, I'd love more but the wife say no! 
-  </div>
+Cloud-Recon is my place to share plain-English guidance on Azure with a bias for practicality. Expect deep dives that show the why as well as the how, complete examples you can copy with confidence, and opinionated takes based on what actually works at scale. I write about things like Azure Route Server, Virtual WAN, ExpressRoute, landing zones, governance, security boundaries, and the trade-offs that sit behind real designs.
 
-  <div style="margin-left: 20px;">
-    <img src="{{ '/assets/images/WM-NFK.jpg' | relative_url }}" alt="Wayne Marks" style="width:250px; border-radius:8px;">
-  </div>
+My approach is simple. Build networks that are easy to reason about, easy to observe, and easy to recover. Prefer fewer moving parts. Prove it with tests. Automate what you will need to repeat. When in doubt, choose clarity.
 
-</div>
+Outside of work I am married with four daughters, two granddaughters, and a grandson on the way. I also have an unhealthy obsession with Springer Spaniels. I now have three. I would happily have more but my wife says no.
+
+If you want to compare notes, challenge an idea, or suggest a topic you would like me to cover next, connect with me on LinkedIn: <a href="https://www.linkedin.com/in/wayne-marks" target="_blank" rel="noopener">Wayne Marks</a>.
