@@ -1,31 +1,24 @@
-<!DOCTYPE html>
-<html lang="{{ site.lang | default: "en-US" }}">
-  <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>{{ page.title | default: site.title }}</title>
-    <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
-  </head>
+---
+layout: default
+title: "About Wayne"
+permalink: /about/
+---
 
-  <body>
-    <header class="page-header" role="banner">
-      <h1 class="project-name">{{ site.title }}</h1>
-      <h2 class="project-tagline">{{ site.description }}</h2>
+<p align="center">
+  <img src="{{ '/assets/images/WM-NFK.jpg' | relative_url }}" alt="Wayne Marks in Norfolk" width="500">
+</p>
 
-      <p>
-        <a href="https://www.linkedin.com/in/wayne-marks" target="_blank" rel="noopener">LinkedIn: Wayne Marks</a><br>
-        <a href="https://cloud-recon.github.io/Azure-Blog/">Take me home</a>
-      </p>
-    </header>
+Hello, I am Wayne Marks. I have worked in IT since 2002 after leaving the British Army. I started with hands-on engineering and moved through partner roles and government-sensitive projects before joining Microsoft in 2020.
 
-    <main id="content" class="main-content" role="main">
-      {{ content }}
-      <footer class="site-footer">
-        <p>
-          © {{ site.time | date: "%Y" }} {{ site.title }}. All rights reserved.
-        </p>
-      </footer>
-    </main>
-  </body>
-</html>
+Today I am an Infrastructure Cloud Solutions Architect in a global team. My focus areas are Azure networking, data centre migrations and business continuity and disaster recovery. I have supported enterprise and public sector customers across the UK, EMEA, multiple countries in Africa, and Australia.
+
+Cloud-Recon is my place to share plain-English guidance on Azure with a bias for practicality. Expect deep dives that show the why as well as the how, complete examples you can copy with confidence, and opinionated takes based on what actually works at scale. I write about things like Azure Route Server, Virtual WAN, ExpressRoute, landing zones, governance, security boundaries, and the trade-offs that sit behind real designs.
+
+My approach is simple. Build networks that are easy to reason about, easy to observe, and easy to recover. Prefer fewer moving parts. Prove it with tests. Automate what you will need to repeat. When in doubt, choose clarity.
+
+Outside of work I am married with four daughters, two granddaughters, and a grandson on the way. I also have an unhealthy obsession with Springer Spaniels. I now have three. I would happily have more but my wife says no.
+
+<p align="center">
+  <a href="https://www.linkedin.com/in/wayne-marks" target="_blank" rel="noopener">LinkedIn: Wayne Marks</a><br>
+  <a href="https://cloud-recon.github.io/Azure-Blog/">Take me home</a>
+</p>
