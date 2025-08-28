@@ -16,6 +16,5 @@ Cloud-Recon is my place to share plain-English guidance on Azure with a bias for
 
 My approach is simple. Build networks that are easy to reason about, easy to observe, and easy to recover. Prefer fewer moving parts. Prove it with tests. Automate what you will need to repeat. When in doubt, choose clarity.
 
-Outside of work I am married with four daughters, two granddaughters, and a grandson on the way. I also have an unhealthy obsession with Springer Spaniels. I now have three. I would happily have more but my wife says no.
+Outside of work I am married with four daughters, two granddaughters, and a grandson on the way. I also have an unhealthy obsession with Springer Spaniels. I now have three. I would happily have more but my wife says no! BOOO
 
-If you want to compare notes, challenge an idea, or suggest a topic you would like me to cover next, connect with me on LinkedIn: <a href="https://www.linkedin.com/in/wayne-marks" target="_blank" rel="noopener">Wayne Marks</a>.
