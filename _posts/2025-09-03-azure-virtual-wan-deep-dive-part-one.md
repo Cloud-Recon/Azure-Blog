@@ -169,7 +169,7 @@ In the next chapter, we will dig into that routing model even further. What real
 ## 4. Routing in vWAN: Goodbye UDR Swamp, Hello Policy Control
 
 <p align="center">
-  <img src="{{ '/assets/images/chapter-4.png' | relative_url }}" alt="Routing in vWAN" width="500">
+  <img src="{{ '/assets/images/chapter 4.png' | relative_url }}" alt="Routing in vWAN" width="500">
 </p>
 
 One of the worst parts of classic Azure networking is the slow crawl through the UDR swamp. You start with a few route tables, manually assigning next-hops for internet traffic or firewall inspection. Then someone adds a third-party NVA. Then ExpressRoute. Then another region. Before long, you are balancing 15 route tables across five VNets, with each one needing its own logic, its own rules, and its own propagation behaviour.
