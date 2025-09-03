@@ -9,7 +9,7 @@ permalink: /azure-vwan-part-one/
   <img src="{{ '/assets/images/Chapter 1.png' | relative_url }}" alt="Route Server to vWAN" width="500">
 </p>
 
-**PoC v1.0**
+**PoC v1.1**
 
 ---
 
