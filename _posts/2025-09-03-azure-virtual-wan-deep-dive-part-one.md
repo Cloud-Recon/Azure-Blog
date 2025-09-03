@@ -9,8 +9,6 @@ permalink: /azure-vwan-part-one/
   <img src="{{ '/assets/images/Chapter 1.png' | relative_url }}" alt="Route Server to vWAN" width="500">
 </p>
 
-**PoC v2.2**
-
 ---
 
 Before we get started on Azure Virtual WAN, I want to pause and thank a good friend and former Microsoft Cloud Solution Architect, Paul Paginton. Paul is not just one of the best networkers I’ve worked with, he’s one of the best full stop. The kind of engineer who doesn't just understand routing, but genuinely feels it. I’ve always said he probably sees the world in binary or some kind of Matrix-style digital rain. His ability to break down complex architectures and get straight to the heart of a problem is second to none.
