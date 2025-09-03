@@ -9,7 +9,7 @@ permalink: /azure-vwan-part-one/
   <img src="{{ '/assets/images/Chapter 1.png' | relative_url }}" alt="Route Server to vWAN" width="500">
 </p>
 
-**PoC v1.4**
+**PoC v2**
 
 ---
 
@@ -161,7 +161,7 @@ In the next chapter, we will dig into that routing model even further. What real
 ## 4. Routing in vWAN: Goodbye UDR Swamp, Hello Policy Control
 
 <p align="center">
-  <img src="{{ '/assets/images/Chapter%204.png' | relative_url }}" alt="Routing in vWAN" width="500">
+  <img src="/assets/images/Chapter%204.png" alt="Routing in vWAN" width="500">
 
 </p>
 
