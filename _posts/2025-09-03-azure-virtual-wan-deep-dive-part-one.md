@@ -9,7 +9,7 @@ permalink: /azure-vwan-part-one/
   <img src="{{ '/assets/images/Chapter 1.png' | relative_url }}" alt="Route Server to vWAN" width="500">
 </p>
 
-**PoC v1.1**
+**PoC v1.3**
 
 ---
 
@@ -25,7 +25,6 @@ Thanks, Paul. You’re a class act, and the kind of voice more people need to he
 
 ## Part One: Architecture, Routing, and the Shape of the Modern Network
 
----
 
 ## 1. From Route Server to vWAN: Natural Progression or Full Reset?
 
@@ -47,7 +46,7 @@ But before we get too comfortable, there’s a question that still haunts every 
 
 > “If I’m using vWAN, do I still need a hub-and-spoke topology?”
 
----
+
 
 ## 2. To Hub and Spoke or Not to Hub and Spoke… That Is the Question
 
@@ -75,7 +74,6 @@ It evolves. You still need segmentation. You still need control. You still need 
 
 Virtual WAN lets you connect spoke VNets, branch sites, ExpressRoute circuits, and even other vWAN hubs across the globe — all without needing to peer VNets or manage route propagation tables by hand. Instead, you assign connections to route tables, set up intent, and let the system handle the rest.
 
----
 
 ### Real-World Use Cases
 
@@ -88,7 +86,6 @@ A global company with hundreds of branch offices connects via direct internet br
 **c) Preparing for Global Scale**  
 A business expanding into Africa or the Middle East can deploy regional vWAN hubs close to new users. These hubs connect through the backbone to core services hosted elsewhere, giving performance without sacrificing control.
 
----
 
 So no, hub-and-spoke is not dead. It’s just matured. You still need it, but you don’t have to build it the old way.
 
@@ -110,7 +107,6 @@ So what is it, exactly?
 
 Think of it as a regionally deployed edge of Microsoft’s global backbone. A programmable, scalable core that acts as your gateway, router, policy engine, firewall anchor, and connectivity hub. When you deploy a vWAN Hub, you are not provisioning infrastructure. You are provisioning a service fabric that lives at the edge of a massively scaled, software-defined backbone.
 
----
 
 ### The Routing Fabric
 
@@ -120,7 +116,6 @@ You can create multiple route tables within the hub, each with its own logic. Th
 
 The routing fabric supports BGP. When a branch device connects via IPsec VPN and advertises prefixes, the hub will learn those routes dynamically. If you connect an ExpressRoute circuit, it does the same. You can even create static routes for edge cases, but most of the heavy lifting is handled by Microsoft’s backbone.
 
----
 
 ### The Gateways
 
@@ -130,7 +125,6 @@ The VPN Gateway in vWAN supports thousands of tunnels, active-active HA, and bot
 
 The ExpressRoute Gateway works in a similar way. You link your ER circuit to the hub, and the routes from your on-prem network are automatically propagated into the vWAN route tables. This makes transitive routing possible across ExpressRoute, VPN, and VNets without needing to bridge traffic manually through a virtual appliance.
 
----
 
 ### The Firewall
 
@@ -142,7 +136,6 @@ You get two main intents: internet and private traffic. The internet intent rout
 
 If you need more granular control, you can skip Routing Intent and use custom route tables instead. In my personal design preferences, I choose not to do this unless absolutely necessary. I find that mixing custom routing with hub-managed propagation increases complexity and can easily create unintended paths. In some customer designs, it has introduced more troubleshooting overhead than value. I favour simplicity and predictability and Routing Intent, once implemented, delivers that.
 
----
 
 ### What It Looks Like in Practice
 
@@ -154,7 +147,6 @@ There is no express route circuit to the firewall, then from firewall to another
 
 This is not just easier. It is more stable. It is more scalable. And it removes most of the troubleshooting steps that come from asymmetric routes, missed next-hops, and broken peerings.
 
----
 
 ### Where It Still Needs You
 
@@ -178,7 +170,6 @@ Make one mistake, and traffic goes the wrong way. Make two, and it goes nowhere.
 
 Routing in vWAN is not done with UDRs. It is done with route tables, but these are not the ones you are used to. These live inside the vWAN hub, and they control how traffic is forwarded between connections, not within a VNet. When you connect a VNet, branch, or ExpressRoute to the hub, you can choose which route table it associates with, and which tables it propagates its routes into. This gives you full control over who learns what, and how transit is managed.
 
----
 
 ### The Association and Propagation Model
 
@@ -193,8 +184,6 @@ This matters.
 
 It means you can build multiple logical domains inside the same hub. You can allow one spoke VNet to send traffic to shared services but not to other spokes. You can allow a branch to talk to a data centre over ExpressRoute but deny it access to any VNets. You build the routing policy using these associations and propagations, not static next-hops.
 
----
-
 ### Routing Intent Revisited
 
 As mentioned in Chapter 3, Routing Intent is a higher-level abstraction. You enable it to tell the hub that certain traffic types like internet-bound flows or inter-spoke communication must be routed through Azure Firewall. This avoids the need to manually wire the inspection path.
@@ -203,7 +192,6 @@ The downside is that enabling Routing Intent rewrites your route tables in the b
 
 In highly sensitive designs where control and visibility matter more than simplicity, I prefer to define custom route tables and manage associations manually. But that approach only works when you understand the implications.
 
----
 
 ### Static vs Propagated Routes
 
@@ -216,8 +204,6 @@ vWAN lets you add static routes into any route table. These are useful for scena
 But if you lean too heavily on static routes, you lose what makes vWAN powerful. The platform is designed for dynamic propagation. The more you manually insert paths, the more brittle the design becomes.
 
 **Use static routes to plug gaps, not to build the structure.**
-
----
 
 ### Example: Spoke Isolation with Shared Services
 
@@ -238,15 +224,11 @@ You would:
 
 This allows traffic from A and B to reach Shared, but not each other. All without needing a single UDR or NVA.
 
----
-
 ### The Trap of “Default”
 
 When you first connect a VNet or branch to the hub, it defaults to using the **Default** route table. This seems convenient, but it is often the root of routing problems.
 
 That table is used for general propagation, and any connection using it may end up seeing routes you did not intend to share. Always create your own route tables and be explicit about what connects to what. Relying on Default is like building a house and leaving the front door open just because it came with a key.
-
----
 
 ### Observability and Gotchas
 
@@ -257,8 +239,6 @@ vWAN’s route viewer has improved, but debugging routing behaviour still requir
 Do not assume everything propagates as you expect. Be deliberate. Map it out. Review the effective routes for each connection and simulate failure paths before pushing to production.
 
 vWAN routing is not difficult once you learn its rules, but it is a shift in mindset. You are no longer wiring up networks. You are declaring who can talk to who and letting the platform handle the plumbing.
-
----
 
 In the next chapter, we will focus on the VPN side of the hub. It is one of the most misunderstood parts of vWAN and one of the most powerful when configured correctly. Let’s clear that up next.
 
@@ -278,8 +258,6 @@ This model barely scaled. Performance was capped. Troubleshooting was tedious. A
 
 **vWAN changes this completely.**
 
----
-
 ### The Managed Aggregator
 
 In Virtual WAN, the VPN gateway is no longer something you deploy yourself. It’s built into the hub. You do not assign IP addresses. You do not provision scale units. You enable it, and Azure provisions a set of high-throughput, regionally resilient VPN endpoints.
@@ -297,8 +275,6 @@ Each VPN connection is treated as a **Site**, defined in the Virtual WAN resourc
 
 You can assign a site to a specific hub, configure BGP or static routing, and define link properties such as latency, bandwidth, and preferred path.
 
----
-
 ### Active-Active by Default
 
 When you connect to a vWAN VPN gateway, you are actually connecting to two gateway instances behind the scenes. These are deployed across fault domains and availability zones when supported by the region. Each one has its own public IP, and both are expected to be used.
@@ -309,8 +285,6 @@ If your on-prem device only supports one active session at a time, you are leavi
 
 Failing to do this does not mean your connection will break, but it does mean you have introduced a single point of failure into a system that was designed to be resilient.
 
----
-
 ### BGP Support That Actually Works
 
 The vWAN VPN gateway fully supports BGP, and in large-scale networks this is critical. Rather than hardcoding address spaces, you let your on-prem device advertise prefixes dynamically.
@@ -320,8 +294,6 @@ The hub receives those routes, and depending on your propagation and association
 You can even configure BGP communities or local preference to influence route selection. This brings real enterprise-grade routing control into a space that used to be a glorified static tunnel.
 
 There is also support for ASN configuration on both the local and peer sides, including 16-bit and 32-bit ASN formats. This matters when connecting to ISPs or legacy systems that still rely on specific BGP conventions.
-
----
 
 ### Multi-Site, Multi-Hub Design
 
@@ -336,8 +308,6 @@ This is where the backbone starts to show its value. A site in South Africa can 
 
 The key is to treat the VPN gateway as a distributed edge of Azure, not just a replacement for a VNet gateway. You are not building a star topology — you are connecting into a mesh.
 
----
-
 ### Route Filtering and Split Tunnelling
 
 Each site can be configured to receive a subset of routes. If you want certain sites to access only specific VNets or to exclude internet-bound routes from Azure, you can control this with custom route tables and routing intent.
@@ -350,8 +320,6 @@ You can also configure split tunnelling so that only specific prefixes are route
 
 Just be aware that split tunnelling always introduces a decision point. If users at a site can reach both Azure and non-Azure resources, you must be deliberate about where DNS resolution occurs and which gateway becomes the default for return traffic.
 
----
-
 ### Operational Considerations
 
 Deploying a site takes more than a few clicks. You need to:
@@ -362,15 +330,11 @@ Deploying a site takes more than a few clicks. You need to:
 - Monitor link performance using built-in Azure Network Insights  
 - Test failover by disabling one tunnel and watching traffic shift  
 
----
-
 You’ve now seen how Azure vWAN reshapes the foundations of network design. We’ve moved from traditional hub and spoke into something more dynamic, scalable, and cloud-native.
 
 From the role of the Route Server to the power of the vWAN hub, and from routing control to VPN aggregation at serious scale, this has been the structural core of what makes vWAN different.
 
 But this is only part of the story.
-
----
 
 In **Part Two**, we go deeper into the critical edge cases that define success or failure in real-world deployments. We explore how ExpressRoute behaves inside vWAN and why it is not just a private circuit you plug in and forget. We look at how security architectures evolve, when Azure Firewall makes sense, and where NVAs still have an important role.
 
