@@ -23,7 +23,8 @@ Thanks, Paul. You’re a class act, and the kind of voice more people need to he
 
 ---
 
-## Part One: Azure vWAN – Architecture, Routing, and the Shape of the Modern Network
+## Part One: Azure vWAN;
+Architecture, Routing, and the Shape of the Modern Network
 
 ---
 
