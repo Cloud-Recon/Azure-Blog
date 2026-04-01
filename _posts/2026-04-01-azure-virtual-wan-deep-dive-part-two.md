@@ -7,7 +7,7 @@ permalink: /azure-vwan-part-two/
 
 ## WOW, it was September when I wrote part one!
 
-My apologies for waiting until April, some * months later to finish the part two. In truth I've needed the break from just about everything following a mental health breakdown. THE most import message I can pass in any blog is, if you feel under pressure, burn out or there is no way out - trust me there is, speak up and you will find there are more people there for you than you realise.
+My apologies for waiting until April, some 8 months later to finish the part two. In truth I've needed the break from just about everything following a mental health breakdown. THE most import message I can pass in any blog is, if you feel under pressure, burn out or there is no way out - trust me there is, speak up and you will find there are more people there for you than you realise.
 
 ---
 
