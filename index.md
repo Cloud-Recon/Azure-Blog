@@ -38,6 +38,7 @@ it will appear here automatically with its date, title, and excerpt.
 ---
 
 ## 🔭 What’s coming
+- Azure Virtual Desktop, the joys and pitfulls!
 - Azure Virtual WAN
 - Azure Firewall
 
